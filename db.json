@@ -1,0 +1,13 @@
+{
+  "agendamentos": [
+    {
+      "id": "3aa8phmp3gU",
+      "cliente": "teste1",
+      "servico": "Barba - R$20,00",
+      "profissional": "Carlos (Barbeiro)",
+      "data": "2026-04-29",
+      "horario": "21:29"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Serviços</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Page 01 -->
+    <header class="top-header">
+        <h1>Agendamento de Serviços</h1>
+        <div class="header-buttons">
+            <button class="btn-primary"><i class="fa-regular fa-clipboard"></i> Agendar</button>
+            <a href="agenda.html" class="btn-secondary" style="text-decoration: none;">
+                <i class="fa-regular fa-calendar"></i> Ver Agenda
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2>Novo Agendamento</h2>
+            
+            <form id="form-agendamento">
+                <div class="input-group">
+                    <label for="nome">Nome do Cliente</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="servico">Tipo de Serviço</label>
+                    <select id="servico" required>
+                        <option value="" disabled selected>Selecione um serviço</option>
+                        <option value="corte">Corte de Cabelo - R$50,00</option>
+                        <option value="barba">Barba - R$20,00</option>
+                        <option value="manicure">Manicure - R$35,00</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="profissional">Profissional</label>
+                    <select id="profissional" required>
+                        <option value="" disabled selected>Selecione um profissional</option>
+                        <option value="carlos">Carlos (Barbeiro)</option>
+                        <option value="ana">Ana (Manicure)</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="input-group half-width">
+                        <label for="data">Data do Agendamento</label>
+                        <div class="icon-input">
+                            <input type="date" id="data" required>
+                        </div>
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="horario">Horário</label>
+                        <div class="icon-input">
+                            <input type="time" id="horario" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">Confirmar Agendamento</button>
+                    <a href="agenda.html" class="btn-secondary" style="text-decoration: none;">
+                <i class="fa-regular fa-calendar"></i> Ver Agenda
+            </a>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <!-- PIX -->
+     <div id="modal-pix" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Pagamento via PIX</h2>
+                <button class="btn-close" id="btn-fechar-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="pix-summary">
+                <div class="summary-row">
+                    <span>Serviço:</span>
+                    <strong id="resumo-servico">Corte de Cabelo</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Profissional:</span>
+                    <strong id="resumo-profissional">Ana Paula</strong>
+                </div>
+                <div class="summary-row price-row">
+                    <span>Valor:</span>
+                    <strong id="resumo-valor">R$ 50,00</strong>
+                </div>
+            </div>
+
+            <div class="qr-code-container">
+                <img id="qr-code-img" src="" alt="QR Code PIX">
+                <p>Escaneie o QR Code com o app do seu banco</p>
+            </div>
+
+            <div class="copy-section">
+                <p>Ou copie a chave PIX:</p>
+                <div class="copy-input-group">
+                    <input type="text" id="chave-pix" value="ana.paula@email.com" readonly>
+                    <button type="button" id="btn-copiar" class="btn-primary">
+                        <i class="fa-regular fa-copy"></i> Copiar
+                    </button>
+                </div>
+            </div>
+
+            <div class="instructions-box">
+                <strong>Instruções:</strong>
+                <ol>
+                    <li>Abra o app do seu banco</li>
+                    <li>Escolha a opção PIX</li>
+                    <li>Escaneie o QR Code ou cole a chave PIX</li>
+                    <li>Confirme o pagamento</li>
+                </ol>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-success" id="btn-pagamento-realizado">Pagamento Realizado</button>
+                <button type="button" class="btn-secondary" id="btn-cancelar-modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

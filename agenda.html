@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Agendamento de Serviços</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-header">
+        <h1>Agendamento de Serviços</h1>
+        <div class="header-buttons">
+            <a href="index.html" class="btn-secondary" style="text-decoration: none;"><i class="fa-regular fa-clipboard"></i> Agendar</a>
+            <a href="agenda.html" class="btn-primary" style="text-decoration: none;"><i class="fa-regular fa-calendar"></i> Ver Agenda</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card summary-card">
+            <div>
+                <h2>Agenda dos Profissionais</h2>
+                <p class="text-muted" id="total-agendamentos">Total de agendamentos: 0</p>
+            </div>
+            <button class="btn-danger-outline" id="btn-limpar-todos">
+                <i class="fa-regular fa-trash-can"></i> Limpar Todos
+            </button>
+        </div>
+
+        <div id="lista-agenda">
+            </div>
+    </main>
+
+    <script src="agenda.js"></script>
+</body>
+</html>
