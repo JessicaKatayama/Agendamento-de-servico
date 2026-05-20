@@ -1,0 +1,26 @@
+{
+  "name": "agendamento-de-servico",
+  "version": "1.0.0",
+  "description": "| ID | Prioridade | Item | Funcionalidade | Sprint |\r | :--- | :--- | :--- | :--- | :--- |\r | **01** | Alta | Agendamento | Listagem de Serviços  | 1 |\r | **02** | Alta | Agendamento | Calendário Dinâmico de Datas e Horários Disponíveis | 1 |\r | **03** | Média | Pagamentos | Gerar QR code PIX  | 2 |\r | **04** | Média | Agendamento | Filtro de Seleção por Profissional e tipo de serviço | 2 |\r | **05** | Média | Agendamento | Visualização da Agenda | 3 |",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessicaKatayama/Agendamento-de-servico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JessicaKatayama/Agendamento-de-servico/issues"
+  },
+  "homepage": "https://github.com/JessicaKatayama/Agendamento-de-servico#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3"
+  }
+}

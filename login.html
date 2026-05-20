@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Administração</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: var(--bg-color);">
+
+    <div class="card" style="width: 100%; max-width: 400px;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2><i class="fa-solid fa-lock" style="color: var(--primary-blue);"></i> Acesso Restrito</h2>
+            <p class="text-muted">Área de administração da agenda</p>
+        </div>
+        
+        <form id="form-login">
+            <div class="input-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="form-actions" style="margin-top: 1rem;">
+                <button type="submit" class="btn-primary" style="width: 100%;">Entrar</button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="index.html" style="color: var(--text-light); text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar para o site
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

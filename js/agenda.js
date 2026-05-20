@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função que busca os dados da API (GET)
     const carregarAgendamentos = async () => {
         try {
-            const resposta = await fetch('http://localhost:3000/agendamentos');
+            const resposta = await fetch('http://localhost:3001/agendamentos');
             agendamentos = await resposta.json();
             renderizarAgenda();
         } catch (erro) {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.deletarAgendamento = async (idParaDeletar) => {
         if(confirm('Tem certeza que deseja cancelar este agendamento?')) {
             try {
-                await fetch(`http://localhost:3000/agendamentos/${idParaDeletar}`, {
+                await fetch(`http://localhost:3001/agendamentos/${idParaDeletar}`, {
                     method: 'DELETE'
                 });
                 carregarAgendamentos(); // Recarrega a lista do servidor após deletar
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(agendamentos.length > 0 && confirm('Atenção: Isso irá apagar TODOS os agendamentos. Deseja continuar?')) {
             try {
                 for (let agendamento of agendamentos) {
-                    await fetch(`http://localhost:3000/agendamentos/${agendamento.id}`, { method: 'DELETE' });
+                    await fetch(`http://localhost:3001/agendamentos/${agendamento.id}`, { method: 'DELETE' });
                 }
                 carregarAgendamentos();
             } catch (erro) {

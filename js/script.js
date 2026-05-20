@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            // Requisição POST para enviar os dados ao JSON Server
-            await fetch('http://localhost:3000/agendamentos', {
+            // Faz a requisição POST para o servidor
+            const resposta = await fetch('http://localhost:3001/agendamentos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -100,16 +100,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(novoAgendamento)
             });
 
+            // Converte a resposta do servidor para entender o que ele disse
+            const dados = await resposta.json();
+
+            // Verifica se o servidor retornou algum erro (como o status 400 que criamos)
+            if (!resposta.ok) {
+                // Mostra o erro exato que mandamos do Node.js
+                alert(dados.erro); 
+                return; // O 'return' faz a função parar aqui. O modal não fecha!
+            }
+
+            // Se chegou aqui, é porque a resposta foi OK (201)
             alert('Agendamento confirmado com sucesso!');
             fecharModal();
             formAgendamento.reset(); 
-            
-            // Opcional: Descomente a linha abaixo para ir para a agenda automaticamente
-            // window.location.href = 'agenda.html';
 
         } catch (erro) {
             console.error("Erro ao salvar agendamento:", erro);
-            alert('Erro ao conectar com o servidor. Verifique se o JSON Server está rodando.');
+            alert('Erro ao conectar com o servidor.');
         }
     });
 });
